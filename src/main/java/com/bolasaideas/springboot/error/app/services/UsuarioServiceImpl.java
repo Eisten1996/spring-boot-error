@@ -2,6 +2,7 @@ package com.bolasaideas.springboot.error.app.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -41,6 +42,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 			}
 		}
 		return usuario;
+	}
+
+	@Override
+	public Optional<Usuario> ObtenerPorIdOptional(Integer id) {
+		// TODO Auto-generated method stub
+		Usuario usuario = this.ObtenerPorId(id);
+		return Optional.ofNullable(usuario);
 	}
 
 }
